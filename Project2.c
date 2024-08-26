@@ -3,7 +3,6 @@
 
 
 
-/*
 void degerdegistiren (int d[], int e[],int f[],int m,int n,int o);
 
 
@@ -59,9 +58,9 @@ void degerdegistiren (int d[], int e[],int f[],int m,int n,int o)
 	
 }
 
-*/
 
-/*
+
+
 
 
 
@@ -118,12 +117,12 @@ void notgirisi(float not[5][4],int n,int m)
 	}
 
 }
-*/
+
 
 
 //pointer =Gösterici demektir
 
-/*
+
 
 int main()
 {   
@@ -157,9 +156,9 @@ int main()
 	
 	return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
 	int a[4];
@@ -192,7 +191,7 @@ int main()
 	
 }
 
-*/
+
 
 
 //Pointer 1
@@ -200,7 +199,7 @@ int main()
 
 
 
-/*
+
 int main()
 {
 	int kurt=10;//Veri tipi ile birlikte Atanmýþ Deðer.Kurtun Deðeri eþittir 10 demektir
@@ -222,9 +221,9 @@ int main()
 	
 	return 0;
 }
-*/
 
-/*
+
+
 
 int main()
 
@@ -249,10 +248,10 @@ printf("Adresi :: %p",bomba);
 	
 }
 
-*/
 
 
-/*
+
+
 
 
 
@@ -292,15 +291,21 @@ int main ()
 
 
 
-*/
 
 
+//karakter için 1 bayt , int için 4 bayt , double için 8 bayt yer açýlýr..
+//c dilinde göstericiler ve diziler arasýnda yakýn bir iliþki vardýr.Bu yüzden,bir dizin herhangi bir elemanýna ***gösterici ile de eriþilebilir***.
+
+
+
+double ortalama (double dizi[] ,int n);
 
 int main ()
 {
-	
-	
-	
+	double a[5]={1.1,2.2,3.3,4.4,5.5};
+	double o;
+	o=ortalama(a,5);
+	printf("Dizinin ortalamasi : %lf\n",o);
 	
 	
     	
@@ -309,9 +314,65 @@ int main ()
 	
 }
 
+double ortalama (double dizi[] , int n)
+{
+
+double *p,t=0.0,ortalama;
 
 
 
+     for (p=dizi;p<=&dizi[n];p++)
+     {
+     	
+     	t+=*p;
+	 }
+	 ortalama=t/n;
+	 return ortalama;
+
+
+}
+
+
+
+//struct (kart)...
+
+
+struct Ogrenci{
+	int OgrenciNo,OgrenciClass;
+	char OgrenciName[30],OgrenciSurname[30],OgrenciDep[20];
+	float ortalama;
+};
+
+int main ()
+{
+	int i;
+	struct Ogrenci Ogrenciler[2];//bu istenilen miktarda  arttýrýlýp azaltýlabilir..
+	
+	printf("Lutfen Ogrencilerin Istenilen Bilgilerini Sirayla Giriniz...\n\n");
+	
+	for(i=0;i<2;i++)
+	{
+		printf("Lutfen  %d inci Ogrencinin Ismini Giriniz..",i+1);
+		scanf("%s",&Ogrenciler[i].OgrenciName);
+		printf("Lutfen  %d inci Ogrencinin SoyIsmini Giriniz..",i+1);
+		scanf("%s",&Ogrenciler[i].OgrenciSurname);
+		printf("Lutfen  %d inci Ogrencinin Okul Numarasini Giriniz..",i+1);
+		scanf("%d",&Ogrenciler[i].OgrenciNo);
+		
+	}
+	
+	
+	   printf("Alinan Ogrencilerin Bilgileri:\n");
+	   
+	   for(i=0;i<2;i++)
+	   { 
+	   	  printf("%s  \t %s \t %d\n",Ogrenciler[i].OgrenciName,Ogrenciler[i].OgrenciSurname, Ogrenciler[i].OgrenciNo);
+	   	
+	   }
+	
+	
+	
+}
 
 
 
